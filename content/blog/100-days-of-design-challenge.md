@@ -1,8 +1,8 @@
 ---
-path: awesome-images
+path: 100-days-of-design-challenge
 date: 2020-06-06T01:22:55.506Z
-title: Awesome Images
-description: Fix for gatsby-plugin-mdx and gatsby-remark-images
+title: 100 Days Of Design Challenge
+description: '#100DaysOfDesign Challenge as UI Designer'
 ---
 ![Great Gatsby](/../assets/great2.jpg "Great Gatsby")
 

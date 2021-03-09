@@ -77,22 +77,23 @@ const SearchedPosts = ({ results }) =>
   )
 
 const AllPosts = ({ posts }) => (
-  <div style={{ margin: "20px 0 40px" }}>
+  <div >
     {posts.map(({ node }) => {
       const title = node.frontmatter.title || node.fields.slug
       return (
-        <div key={node.fields.slug}>
-          <h3
+        <div key={node.fields.slug}  className="post">
+          <h3 
             style={{
               marginBottom: rhythm(1 / 4),
+              lineHeight:'2rem'
             }}
           >
-            <Link style={{ boxShadow: `none` }} to={`/blog${node.fields.slug}`}>
+            <Link style={{ boxShadow: `none`, color:'var(--color)' }} to={`/blog${node.fields.slug}`}>
               {title}
             </Link>
           </h3>
-          <small>{node.frontmatter.date}</small>
-          <p
+
+          <p style={{margin:0}}
             dangerouslySetInnerHTML={{
               __html: node.frontmatter.description || node.excerpt,
             }}
@@ -103,7 +104,7 @@ const AllPosts = ({ posts }) => (
   </div>
 )
 
-const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
+const SearchPosts = ({ posts, localSearchBlog, location, navigate, show }) => {
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || "")
 
@@ -113,9 +114,15 @@ const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
     JSON.parse(localSearchBlog.store)
   )
 
+  let display = ''
+  if(show === false){
+    display = 'none'
+  }
+
+
   return (
     <>
-      <SearchBar>
+      <SearchBar style={{display:display}}>
         <svg
           focusable="false"
           xmlns="http://www.w3.org/2000/svg"

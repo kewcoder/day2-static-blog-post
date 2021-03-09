@@ -16,7 +16,11 @@ export default function HTML(props) {
           rel="search"
           href="opensearch.xml"
         />
+
         {props.headComponents}
+
+        <link rel="stylesheet" href="/kewstyle.css"></link>
+        
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

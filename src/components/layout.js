@@ -2,11 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { location, title, children, Layout } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     const blogPath = `${__PATH_PREFIX__}/blog/`
     let header
@@ -14,13 +14,32 @@ class Layout extends React.Component {
     if (location.pathname === rootPath || location.pathname === blogPath) {
       header = (
         <h1
+        className="navbar"
+      >
+        <Link
+          className="logo"
           style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
           }}
+          to={location.pathname === blogPath ? `/blog/` : `/`}
         >
+          Kew<span className="text-primary">Blog</span>
+        </Link>
+        <div className="menu_btn"><span></span>Menu</div>
+
+      </h1>
+      )
+    } else {
+      header = (
+        <h1
+          className="navbar"
+        >
+          <div  className="back_btn"><span></span>Back</div>
+
           <Link
+            className="logo"
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
@@ -28,39 +47,19 @@ class Layout extends React.Component {
             }}
             to={location.pathname === blogPath ? `/blog/` : `/`}
           >
-            {title}
+            Kew<span className="text-primary">Blog</span>
           </Link>
+
         </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/blog/`}
-          >
-            {title}
-          </Link>
-        </h3>
       )
     }
     return (
-      <Wrapper>
+      <Wrapper >
         <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
+        className={Layout}
+        style={{
             maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            padding: `0 ${rhythm(3 / 4)}`,
           }}
         >
           <header>{header}</header>
@@ -69,7 +68,7 @@ class Layout extends React.Component {
         <Footer>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.kewcoder.github.io">KewCoder</a>
         </Footer>
       </Wrapper>
     )

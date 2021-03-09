@@ -10,10 +10,11 @@ import SearchPosts from "../components/searchPosts"
 class Blog extends React.Component {
   render() {
     const { data, navigate, location } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
     const localSearchBlog = data.localSearchBlog
-
+    const siteTitle = data.site.siteMetadata.title
+  
+    
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
