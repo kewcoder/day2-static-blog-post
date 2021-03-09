@@ -7,9 +7,11 @@ import { rhythm } from "../utils/typography"
 
 class Layout extends React.Component {
 
+ 
+  
   state = {
-    menuIsActive: (window.matchMedia("(max-width: 1200px)").matches) ? false : true,
-    darkMode: (window.matchMedia("(prefers-color-scheme: dark)").matches) ? true : false
+    menuIsActive: (typeof window !== 'undefined') ? (window.matchMedia("(max-width: 1200px)").matches) ? false : true : true,
+    darkMode: (typeof window !== 'undefined') ? (window.matchMedia("(prefers-color-scheme: dark)").matches) ? true : false : false
   };
 
 
