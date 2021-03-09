@@ -3,7 +3,7 @@ path: day-2-coding
 date: 2020-06-06T01:22:55.506Z
 title: Day 1 | 100 Days Of Code Challenge
 description: '#100DaysOfCode Challenge as Fullstack Developer'
-thumbnail: /../assets/youtube-thumbnail.jpg
+thumbnail: ../assets/youtube-thumbnail.jpg
 ---
 ![Great Gatsby](/../assets/great2.jpg "Great Gatsby")
 

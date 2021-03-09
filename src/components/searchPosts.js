@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
+import Img from 'gatsby-image'
 
 import { rhythm } from "../utils/typography"
 
@@ -44,6 +45,7 @@ const SearchBar = styled.div`
 const SearchedPosts = ({ results }) =>
   results.length > 0 ? (
     results.map(node => {
+
       const date = node.date
       const title = node.title || node.slug
       const description = node.description
@@ -81,10 +83,12 @@ const AllPosts = ({ posts }) => (
   <div >
     {posts.map(({ node }) => {
 
+      console.log(node)
+
       const title = node.frontmatter.title || node.fields.slug
       return (
         <div key={node.fields.slug}  className="post">
-          <img src={node.frontmatter.thumbnail} width="100%" alt="Thumbnail" />
+          <Img fluid={node.frontmatter.thumbnail} width="100%" alt="Thumbnail" />
           <h3 
             style={{
               marginBottom: rhythm(1 / 4),
