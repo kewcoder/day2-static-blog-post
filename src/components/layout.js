@@ -10,7 +10,7 @@ class Layout extends React.Component {
  
   
   state = {
-    menuIsActive: (typeof window !== 'undefined') ? (window.matchMedia("(max-width: 1200px)").matches) ? false : true : true,
+    menuIsActive: (typeof window !== 'undefined') ? (window.matchMedia("(max-width: 1200px)").matches) ? false : true : false,
     darkMode: (typeof window !== 'undefined') ? (window.matchMedia("(prefers-color-scheme: dark)").matches) ? true : false : false
   };
 
