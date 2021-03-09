@@ -6,12 +6,16 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import Img from 'gatsby-image'
+
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const thumbnail = post.frontmatter.thumbnail.childImageSharp.fluid
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -19,6 +23,9 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <h1 style={{marginTop:0}}>{post.frontmatter.title}</h1>
+
+        <Img fluid={thumbnail} />
+
         <p
           style={{
             ...scale(-1 / 5),
@@ -44,18 +51,19 @@ class BlogPostTemplate extends React.Component {
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: 0,
+            color: 'var(--color)',
           }}
         >
           <li>
             {previous && (
-              <Link to={`/blog${previous.fields.slug}`} rel="prev">
+              <Link style={{ boxShadow: `none`, color:'var(--color)' }} to={`/blog${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={`/blog${next.fields.slug}`} rel="next">
+              <Link style={{ boxShadow: `none`, color:'var(--color)' }} to={`/blog${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -82,9 +90,15 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        thumbnail
         date(formatString: "MMMM DD, YYYY")
         description
+        thumbnail{
+          childImageSharp{
+            fluid(maxWidth: 600){
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

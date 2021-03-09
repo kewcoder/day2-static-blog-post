@@ -18,9 +18,9 @@ function Bio() {
         return (
           <Container>
             <p>
-              Written by <strong>{author}</strong>, a framework built upon the
-              React library.
-              <a href={`https://twitter.com/${social.twitter}`}>
+              Written by <strong>{author}</strong>, UI designer & Front End Developer. 
+              <br />
+               <a href={`https://twitter.com/${social.twitter}`}>
                 Follow me on Twitter
               </a>
             </p>

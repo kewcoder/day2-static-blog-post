@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Tag from "../components/tag"
+import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SearchPosts from "../components/searchPosts"
@@ -9,21 +9,19 @@ import SearchPosts from "../components/searchPosts"
 class Blog extends React.Component {
   render() {
     const { data, navigate, location } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
-    
     const localSearchBlog = data.localSearchBlog
-
+    const siteTitle = data.site.siteMetadata.title
+  
     return (
-      <Layout location={this.props.location} title={siteTitle} Layout="home">
+      <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Tag />
+        <Bio />
         <SearchPosts
           posts={posts}
           localSearchBlog={localSearchBlog}
           navigate={navigate}
           location={location}
-          show={false}
         />
       </Layout>
     )

@@ -53,13 +53,17 @@ const SearchedPosts = ({ results }) =>
       const slug = node.slug
 
       return (
-        <div key={slug}>
+        <div key={slug} className="post">
+
+          
           <h3
             style={{
+              marginTop: '10px',
               marginBottom: rhythm(1 / 4),
+              lineHeight:'2rem'
             }}
           >
-            <Link style={{ boxShadow: `none` }} to={`/blog${slug}`}>
+            <Link style={{ boxShadow: `none`, color:'var(--color)' }} to={`/blog${slug}`}>
               {title}
             </Link>
           </h3>
@@ -83,22 +87,26 @@ const AllPosts = ({ posts }) => (
   <div >
     {posts.map(({ node }) => {
 
-      console.log(node)
-
       const title = node.frontmatter.title || node.fields.slug
+
+      const thumbnail = node.frontmatter.thumbnail.childImageSharp.fluid
       return (
         <div key={node.fields.slug}  className="post">
-          <Img fluid={node.frontmatter.thumbnail} width="100%" alt="Thumbnail" />
+
+            <Link style={{ boxShadow: `none`, color:'var(--color)' }} to={`/blog${node.fields.slug}`}>
+          
+          <Img fluid={thumbnail} />
+
           <h3 
             style={{
+              marginTop: '10px',
               marginBottom: rhythm(1 / 4),
               lineHeight:'2rem'
             }}
           >
-            <Link style={{ boxShadow: `none`, color:'var(--color)' }} to={`/blog${node.fields.slug}`}>
               {title}
-            </Link>
           </h3>
+          </Link>
 
           <p style={{margin:0}}
             dangerouslySetInnerHTML={{
