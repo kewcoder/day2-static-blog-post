@@ -83,6 +83,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        thumbnail
         date(formatString: "MMMM DD, YYYY")
         description
       }

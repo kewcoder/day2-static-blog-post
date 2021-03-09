@@ -6,7 +6,7 @@ import { rhythm } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children, Layout } = this.props
+    const { location, children, Layout } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     const blogPath = `${__PATH_PREFIX__}/blog/`
     let header

@@ -77,11 +77,14 @@ const SearchedPosts = ({ results }) =>
   )
 
 const AllPosts = ({ posts }) => (
+
   <div >
     {posts.map(({ node }) => {
+
       const title = node.frontmatter.title || node.fields.slug
       return (
         <div key={node.fields.slug}  className="post">
+          <img src={node.frontmatter.thumbnail} width="100%" alt="Thumbnail" />
           <h3 
             style={{
               marginBottom: rhythm(1 / 4),

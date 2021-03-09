@@ -11,6 +11,7 @@ class Blog extends React.Component {
     const { data, navigate, location } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
+    
     const localSearchBlog = data.localSearchBlog
 
     return (
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            thumbnail
           }
         }
       }
