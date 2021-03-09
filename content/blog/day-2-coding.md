@@ -3,6 +3,6 @@ path: day-2-coding
 date: 2020-06-06T01:22:55.506Z
 title: Day 1 | 100 Days Of Code Challenge
 thumbnail: ../assets/youtube-thumbnail.jpg
-description: "#100DaysOfCode Challenge as Fullstack Developer"
+description: "#vanillaJS #SCSS #100DaysOfCode Challenge as Fullstack Developer"
 ---
 > ##### Haaaa
