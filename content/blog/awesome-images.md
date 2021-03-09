@@ -1,8 +1,8 @@
 ---
-path: awesome-images
-date: 2020-06-06T01:22:55.506Z
-title: Awesome Images
-description: Fix for gatsby-plugin-mdx and gatsby-remark-images
+path: 100-days-of-code
+date: 2021-03-13T17:00:00.000Z
+title: 100 Days Of Code Challenge as Frontend Web Developer
+description: "#100DaysOfCode #challenge #html #css #js"
 ---
 ![Great Gatsby](/../assets/great2.jpg "Great Gatsby")
 
