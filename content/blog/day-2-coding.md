@@ -5,4 +5,4 @@ title: Day 1 - Coding
 thumbnail: ../assets/youtube-thumbnail.jpg
 description: "#vanillaJS #SCSS #100DaysOfCode Challenge as Fullstack Developer"
 ---
-> ##### Haaaa
+> Haiii
