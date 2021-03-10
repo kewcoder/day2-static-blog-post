@@ -10,8 +10,8 @@ class Layout extends React.Component {
  
   
   state = {
-    menuIsActive: localStorage.getItem('menu_active') || true,
-    darkMode: localStorage.getItem('dark_mode') || false
+    menuIsActive: true,
+    darkMode: false
   };
 
 
@@ -26,6 +26,11 @@ class Layout extends React.Component {
     localStorage.setItem("dark_mode", this.state.darkMode)
 
   };
+
+  componentDidMount() { 
+    this.setState(() => ({ menuIsActive: (localStorage.getItem('menu_active')) ? localStorage.getItem('menu_active'): true }));
+    this.setState(() => ({ darkMode: (localStorage.getItem('dark_mode')) ? localStorage.getItem('dark_mode'): false }));
+  }
 
   render() {
     const { children} = this.props
