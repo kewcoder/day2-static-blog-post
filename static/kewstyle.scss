@@ -16,11 +16,12 @@ body{
     background: var(--bg);
 }
 .dark-mode{
-    --bg: linear-gradient(176.51deg, #3C6071 -3.8%, rgba(63, 89, 100, 0.45) 127.27%);
+    --bg: linear-gradient(0deg, #3C6071, #3C6071), linear-gradient(176.51deg, rgba(60, 96, 113, 0.5) -3.8%, rgba(3, 17, 23, 0.5) 127.27%);
     --bg-fill: #3f5964;
     --primary: #47D8E1;
     --color:  white;
     color: var(--color);
+    // background: var(--bg-fill);
     background: var(--bg); 
 }
 img{

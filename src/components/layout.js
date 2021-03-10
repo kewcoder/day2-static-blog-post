@@ -17,19 +17,33 @@ class Layout extends React.Component {
 
   toggleMenu = () => {
     this.setState(state => ({ menuIsActive: !state.menuIsActive }));
-    localStorage.setItem("menu_active", this.state.menuIsActive)
 
   };
 
   toggleDarkMode = () => {
+    localStorage.setItem("dark_mode", !this.state.darkMode)
+
     this.setState(state => ({ darkMode: !state.darkMode }));
-    localStorage.setItem("dark_mode", this.state.darkMode)
 
   };
 
   componentDidMount() { 
-    this.setState(() => ({ menuIsActive: (localStorage.getItem('menu_active')) ? localStorage.getItem('menu_active'): true }));
-    this.setState(() => ({ darkMode: (localStorage.getItem('dark_mode')) ? localStorage.getItem('dark_mode'): false }));
+
+    if(window.matchMedia("(max-width: 1200px)").matches){
+
+      this.setState(() => ({ menuIsActive: false}));
+
+    }
+
+     let darkMode = (localStorage.getItem('dark_mode') == 'true') ? true : false
+
+      this.setState(() => ({ 
+        darkMode:  darkMode || false
+       }));
+
+       console.log(this.state.darkMode)
+    
+    
   }
 
   render() {
