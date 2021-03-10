@@ -70,7 +70,7 @@ class Layout extends React.Component {
       <Wrapper className={(this.state.darkMode) ? 'dark-mode' : 'light-mode'}>
 
       <div className={(this.state.menuIsActive) ? 'd-block' : 'd-none'}>
-        <Tag/>
+        <Tag onClick={this.toggleMenu} />
       </div>
 
         <div
